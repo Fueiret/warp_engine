@@ -1,0 +1,9 @@
+C/C++ Debug (gdb)
+CDT GDB Debug Adapter E
+Code Runner
+Color Info
+Kanagawa Flavors
+Kylin Clangd
+Material Icon Theme
+Puja Bloom
+TODOs
