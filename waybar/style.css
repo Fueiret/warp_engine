@@ -1,0 +1,268 @@
+@define-color background_color #24273a;
+@define-color rosewater #f4dbd6;
+@define-color flamingo #f0c6c6;
+@define-color pink #f5bde6;
+@define-color mauve #c6a0f6;
+@define-color red #ed8796;
+@define-color orange #fed06d;
+@define-color maroon #ee99a0;
+@define-color peach #f5a97f;
+@define-color yellow #eed49f;
+@define-color green #a6da95;
+@define-color teal #8bd5ca;
+@define-color sky #91d7e3;
+@define-color sapphire #7dc4e4;
+@define-color blue #8aadf4;
+@define-color lavender #b7bdf8;
+@define-color text #cad3f5;
+@define-color subtext1 #b8c0e0;
+@define-color subtext0 #a5adcb;
+@define-color overlay2 #939ab7;
+@define-color overlay1 #8087a2;
+@define-color overlay0 #6e738d;
+@define-color surface2 #5b6078;
+@define-color surface1 #494d64;
+@define-color surface0 #363a4f;
+@define-color base #24273a;
+@define-color mantle #1e2030;
+@define-color crust #181926;
+
+* {
+    border: none;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    padding: 2 4px;
+    margin: 1px;
+    color: #ffffff;
+}
+
+#group-left {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    /* padding: 5px 10px;*/
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#group-system {
+    color: #ffffff;
+    background-color: @background_color;
+}
+
+#cpu,
+#custom-memoryicon,
+#memory,
+#temperature {
+    color: #ffffff;
+    background-color: @background_color;
+    padding: 0.5rem 0.5rem; /* внутренние отступы (сверху-сниз, слева-справа) */
+    margin: 0 0px; /* внешние отступы (сверху-снизуб слева-справа) */
+}
+
+#cpu {
+    padding-left: 1rem;
+    color: @mauve;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#custom-memoryicon {
+    color: @orange;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#memory {
+    color: @orange;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#temperature {
+    padding-right: 1rem;
+    color: @sky;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#window {
+    color: #ffffff;
+    background-color: @background_color;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#workspaces {
+  color: @text;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 20px;
+  transition: none;
+  background: @background_color;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  margin: 0 0px;
+  border-radius: 18px;
+  /* background-color: #181825; */
+  background-color: @background_color;
+  color: @text;
+  /*transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);*/
+}
+
+#workspaces button:hover {
+  color: #1e1e2e;
+  background-color: #ac4ec1;
+}
+
+#workspaces button.active {
+  background-color: #8967c1; /*#c231c9;*/
+  color: @text;
+  border-radius: 18px;
+}
+
+#workspaces button.urgent {
+  background-color: @backgroound_color;
+  color: @text;
+}
+
+window#waybar {
+    background: rgba(0,0,0,0.0);/*#221932;*/
+}
+
+#custom-filesystem {
+    color: #68a2eb;
+    background-color: rgba(0,0,0,0.0);
+    padding-left: 0.2rem;
+    padding-right: 0.4rem;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 0.5rem;
+}
+
+#clock {
+    padding: 0.0rem 0.8rem;
+    background-color: @background_color;
+    color: @text;
+}
+
+
+#clock:hover {
+    background-color: #4a4a4a;
+}
+
+#custom-layout {
+    background-color: rgba(0,0,0,0.0);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0 0px; /* 0 10 */
+    font-weight: bold;
+}
+
+#custom-power{
+    background-color:@background_color;
+    color: @red;
+    padding-left: 0.8rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 0rem;
+}
+
+#pulseaudio,
+#pulseaudio.input,
+#backlight,
+#network ,
+#battery,
+#custom-keyboard,
+#keyboard-state,
+#bluetooth {
+    color: #ffffff;
+    background-color: @background_color;
+    padding: 0.5rem 0.5rem; /* внутренние отступы (сверху-сниз, слева-справа) */
+    margin: 0px 0px; /* внешние отступы (сверху-снизуб слева-справа) */
+}
+
+#pulseaudio {
+    padding-left: 1rem;
+    color: @red;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#pulseaudio.input{
+    color: @red;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#backlight {
+    color: @yellow;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#network {
+    color: @green;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#bluetooth {
+    color: @blue;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#battery {
+    color: @text;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#battery.charging {
+    /*animation: charging 2s infinite;*/
+    color: @green; 
+}
+
+#battery.warning {
+    color: @orange; 
+}
+
+#battery.critical {
+    color: @red; 
+    /*animation: critical 1s infinite; Мигание при критическом заряде */
+}
+
+#custom-keyboard {
+    border-radius: 0px 10px 10px 0px;
+    color: @text;
+    padding-right: 1rem;
+}
+
+#keyboard-state {
+    border-radius: 0px 10px 10px 0px;
+    padding-left: 0.0rem;
+}
+
+#tray {
+    color: black;
+    padding: 0.0rem 0.0rem;
+    background-color: rgba(0,0,0,0.0);
+}
+
+#tray menu {
+    background-color: @background_color; 
+    color: @text; 
+    border: 1px solid @background_color;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#tray menu separator {
+    background: #1a1c2b;
+    margin: 5px 0;
+}
+
+#tray > .passive {
+    background-color: @background_color;
+    color: @text;
+}
+
+#tray > .needs-attention {
+    background-color: @background_color;
+    color: @text;
+}

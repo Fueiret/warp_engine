@@ -1,0 +1,204 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 3, 
+  "margin-left": 5, 
+  "margin-right": 5, 
+  "modules-left":  ["group/left", "group/system", "tray"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["group/right"],
+
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/filesystem",
+      "clock"
+    ]
+  },
+
+  "group/system": {
+    "orientation" : "horizontal",
+    "modules": [
+      "cpu",
+      "custom/memoryicon",
+      "memory",
+      "temperature"
+    ]
+  },
+
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#input",
+      "backlight",
+      "network",
+      "bluetooth",
+      "battery",
+      "custom/keyboard",
+      /*"keyboard-state",*/
+      "custom/power"
+    ]
+  },
+
+  "hyprland/workspaces": {
+        "on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+	    "4": "4",
+	    "5": "5",
+	    "6": "6",
+	    "7": "7",
+	    "8": "8",
+	    "9": "9",
+	    "10": "10",
+            "special": " "
+        },
+        "sort-by-number": true
+  },
+
+  "hyprland/window": {
+    "format": "{}"
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+
+  "custom/filesystem": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "nautilus"
+  },
+
+  "pulseaudio": {
+    "format": "\uf028  {volume}%",
+    "format-muted": "  {volume}%",
+    "tooltip": false,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "\uf130 {volume}%",
+    "format-source-muted": "\uf131 off",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "scroll-step": 5,
+    "on-click-right": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": " ",
+    "format-disconnected": "\udb81\uddaa",
+    "tooltip": false,
+    "on-click": "alacritty -e nmtui"
+  },
+
+  "cpu": {
+    "format": "\uf4bc {usage}%",
+    "tooltip": false
+  },
+
+  "custom/memoryicon": {
+    "format": "\udb80\udf5b",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "{used:0.1f}G",
+    "tooltip": false
+  },
+
+   "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    // "critical-threshold": 80,
+    // "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C",
+    "tooltip": false
+  },
+
+  "backlight": { 
+    "format": "\udb80\udf35 {percent}%",
+    "tooltip": false
+  }, 
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon}\udb85\udc0b {capacity}%",
+    "format-plugged": "{icon}\udb85\udc0b {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "states": {
+        "warning": 25,
+        "critical": 10
+    },
+    "interval": 5,
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "\uf017 {:%H:%M %a/%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon": 1
+    },
+    "on-click-right": "gnome-calendar"
+  },
+
+  "custom/keyboard": {
+    "format": "  {text}",
+    "exec": "/home/fueiret/.config/scripts/keyboard_layout.sh",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "keyboard-state": {
+    "capslock": true,
+    "format": "Caps {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    },
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout", // Запуск wlogout при клике
+    "tooltip": false
+  },
+
+  "bluetooth": {
+    "format": "\uf293 {status}",
+    "format-connected": "\uf293 {device_alias}",
+    "format-disconnected": "\uf293 off",
+    //"tooltip-format": "Bluetoorh: {status}\nDevice: {device_alias}",
+    "on-click": "blueman-manager",
+    "tooltip": false
+  },
+  
+  "tray": {
+	"icon-size": 14,
+	//"spacing": 10,
+	"show-passive-items": true
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  }
+}
+
+
+
