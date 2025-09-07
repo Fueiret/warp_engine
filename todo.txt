@@ -1,8 +1,8 @@
-add: alsa-lib, alsa-utils, alsa-firmware, screenshots, xclip (to fix clipboard in NeoVim), hyprshot, imv, pipewire-pulse.
+add: alsa-lib, alsa-utils, alsa-firmware, screenshots, xclip (to fix clipboard in NeoVim), hyprshot, imv, pipewire-pulse. (\/)
 Maybe: nemo file manager
-check: bluetooth(bluez, bluez-utils) + start/enable bluetooth.service
-change nekoray -> nekoray-bin (возможно надо добавить добавление tun в систему)
-for fun: cmatrix, hollywood
+check: bluetooth(bluez, bluez-utils) + start/enable bluetooth.service (\/)
+change nekoray -> nekoray-bin (возможно надо добавить добавление tun в систему) (\/)
+for fun: cmatrix, hollywood (\/)
 
 smth extra: openrgb -d 0 --mode static --color random obsidian
 fix mounting usb devices: udisks2 gvfs ntfs-3g exfatprogs dosfstools e2fsprogs

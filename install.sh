@@ -24,11 +24,11 @@ pacman -S --noconfirm hyprland wayland xdg-desktop-portal-hyprland \
 
 # Установка указанных приложений
 echo "Installing applications..."
-pacman -S --noconfirm alacritty waybar rofi dunst hyprpaper hyprlock hypridle nautilus dolphin nano vim nvim brightnessctl bluez bluez-utils bluez-deprecated-tools blueman pipewire pipewire-pulse git cmake
+pacman -S --noconfirm alacritty waybar rofi dunst hyprpaper hyprlock hypridle nautilus dolphin nano vim nvim brightnessctl bluez bluez-utils bluez-deprecated-tools blueman pipewire pipewire-pulse git cmake alsa-lib alsa-utils alsa-firmware screenshots  hyprshot imv xclip
 
 # Установка шрифтов
 echo "Installing fonts..."
-pacman -S --noconfirm ttf-font-awesome ttf-fira-code noto-fontsa ttf-jetbrains-mono-nerd
+pacman -S --noconfirm ttf-font-awesome ttf-fira-code noto-fontsa ttf-jetbrains-mono-nerd ttf-dejavu ttf-liberation
 
 # Создание конфигурационных директорий для пользователя
 USER_HOME="/home/$SUDO_USER"
@@ -499,15 +499,22 @@ if ! command -v yay &> /dev/null; then
     cd -
 fi
 
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
+systemctl enable sddm.service
+
 echo "Installing applications..."
 pacman -S --noconfirm firefox telegram-desktop steam discord nmtui
 
 # Установка дополнительных пакетов из AUR
 echo "Installing from AUR..."
-su "$SUDO_USER" -c "yay -S --noconfirm sddm-astronaut-theme nekoray vscodium betterdiscord-installer"
+su "$SUDO_USER" -c "yay -S --noconfirm sddm-astronaut-theme nekoray-bin vscodium betterdiscord-installer"
 
 # Установка zsh как оболочки по умолчанию
 echo "Installing zsh as default for $SUDO_USER..."
 chsh -s /bin/zsh "$SUDO_USER"
+
+# for fun
+pacman -S --noconfirm cmatrix hollywood
 
 echo "! Installing complete. Reboot your sysstem and choose Hyprland in Display manager."
