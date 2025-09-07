@@ -36,7 +36,7 @@ set_brightness() {
 increase_brightness() {
     # step=$(( max_brightness / 20 ))  # 5% от max
     # set_brightness $new_brightness
-    brightnessctl set +16
+    brightnessctl set +5%
     brightness=$(brightnessctl get)
     max_brightness=$(brightnessctl max)
     current_brightness=$(( brightness * 100 / max_brightness))
@@ -48,7 +48,7 @@ decrease_brightness() {
     # step=$(( max_brightness / 20 ))  # 5% от max
     #new_brightness=$(( current_brightness - step ))
     # set_brightness $new_brightness
-    brightnessctl set 16-
+    brightnessctl set 5%-
     brightness=$(brightnessctl get)
     max_brightness=$(brightnessctl max)
     current_brightness=$(( brightness * 100 / max_brightness))

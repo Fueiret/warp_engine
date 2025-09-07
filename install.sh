@@ -24,28 +24,7 @@ pacman -S --noconfirm hyprland wayland xdg-desktop-portal-hyprland \
 
 # Установка указанных приложений
 echo "Installing applications..."
-pacman -S --noconfirm \
-    alacritty # Терминал
-    waybar # Панель
-    rofi # Лаунчер
-    dunst # Уведомления
-    hyprpaper # Обои
-    hyprlock # Блокировка экрана
-    hypridle # Таймер бездействия
-    nautilus # Файловый менеджер
-    dolphin # Файловый менеджер
-    nano 
-    vim 
-    nvim # Текстовые редакторы
-    brightnessctl # Управление яркостью
-    bluez 
-    bluez-utils 
-    bluez-deprecated-tools # Bluetooth
-    blueman
-    pipewire 
-    pipewire-pulse # Аудио
-    git # Для клонирования конфигураций
-    cmake
+pacman -S --noconfirm alacritty waybar rofi dunst hyprpaper hyprlock hypridle nautilus dolphin nano vim nvim brightnessctl bluez bluez-utils bluez-deprecated-tools blueman pipewire pipewire-pulse git cmake
 
 # Установка шрифтов
 echo "Installing fonts..."
@@ -60,7 +39,7 @@ mkdir -p "$HYPR_DIR" "$CONFIG_DIR/waybar" "$CONFIG_DIR/rofi" "$CONFIG_DIR/dunst"
 
 # Клонирование конфигураций из Git
 echo "Cloning from Git..."
-REPO_URL="YOUR_GIT_REPO_URL" # Замените на URL вашего репозитория
+REPO_URL="https://github.com/Fueiret/warp_engine.git" # Замените на URL вашего репозитория
 TEMP_DIR="/tmp/hyprland-configs"
 rm -rf "$TEMP_DIR"
 su "$SUDO_USER" -c "git clone $REPO_URL $TEMP_DIR"
@@ -521,12 +500,7 @@ if ! command -v yay &> /dev/null; then
 fi
 
 echo "Installing applications..."
-pacman -S --noconfirm \
-    firefox
-    telegram-desktop
-    steam
-    discord
-    nmtui
+pacman -S --noconfirm firefox telegram-desktop steam discord nmtui
 
 # Установка дополнительных пакетов из AUR
 echo "Installing from AUR..."

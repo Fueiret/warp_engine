@@ -27,9 +27,16 @@ if [ -n "$SELECTED" ]; then
     
     # Проверка, существует ли выбранный файл
     if [ -f "$WALLPAPER_PATH" ]; then
+	hyprctl hyprpaper unload all
+	hyprctl hyprpaper preload "$WALLPAPER_PATH"
+	hyprctl hyprpaper wallpaper "eDP-1, $WALLPAPER_PATH"
         # Установка обоев через hyprpaper
-        hyprctl hyprpaper preload "$WALLPAPER_PATH"
-        hyprctl hyprpaper wallpaper ",$WALLPAPER_PATH"
+	#echo """preload = $WALLPAPER_PATH
+#wallpaper = eDP-1, $WALLPAPER_PATH""" > $HOME/.config/hypr/hyprpaper.conf
+	# hyprctl reload hyprpaper
+	# hyprctl hyprpaper reload ,"$WALLPAPER_PATH"
+        # hyprctl hyprpaper preload ,"$WALLPAPER_PATH"
+        # hyprctl hyprpaper wallpaper ",$WALLPAPER_PATH"
         notify-send "Обои установлены" "$SELECTED"
     else
         notify-send "Ошибка" "Файл $SELECTED не существует!"
