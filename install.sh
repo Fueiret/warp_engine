@@ -24,7 +24,7 @@ pacman -S --noconfirm hyprland wayland xdg-desktop-portal-hyprland \
 
 # Установка указанных приложений
 echo "Installing applications..."
-pacman -S --noconfirm alacritty waybar rofi dunst hyprpaper hyprlock hypridle nautilus dolphin nano vim nvim brightnessctl bluez bluez-utils bluez-deprecated-tools blueman pipewire pipewire-pulse git cmake alsa-lib alsa-utils alsa-firmware screenshots  hyprshot imv xclip
+pacman -S --noconfirm alacritty kitty waybar rofi dunst hyprpaper hyprlock hypridle nautilus dolphin nano vim nvim brightnessctl bluez bluez-utils bluez-deprecated-tools blueman pipewire pipewire-pulse git cmake alsa-lib alsa-utils alsa-firmware hyprshot xclip
 
 # Установка шрифтов
 echo "Installing fonts..."
@@ -111,7 +111,7 @@ $menu = rofi --show drun
 exec-once = waybar
 exec-once = hyprpaper # & firefox
 exec-once = nekoray
-exec-once = /home/fueiret/.config/scripts/battery-alert
+exec-once = $HOME/.config/scripts/battery-alert
 
 
 #############################
@@ -504,13 +504,14 @@ systemctl start bluetooth.service
 systemctl enable sddm.service
 
 echo "Installing applications..."
-pacman -S --noconfirm firefox telegram-desktop steam discord nmtui
+pacman -S --noconfirm firefox telegram-desktop steam discord
 
 # Установка дополнительных пакетов из AUR
 echo "Installing from AUR..."
 su "$SUDO_USER" -c "yay -S --noconfirm sddm-astronaut-theme nekoray-bin vscodium betterdiscord-installer"
 
 # Установка zsh как оболочки по умолчанию
+pacman -S --noconfirm zsh
 echo "Installing zsh as default for $SUDO_USER..."
 chsh -s /bin/zsh "$SUDO_USER"
 
