@@ -1,0 +1,6 @@
+/* THEME */
+@theme "colors/navy.rasi"
+
+/* TEMPLATE */
+@import "templates/fullscreen-template.rasi"
+

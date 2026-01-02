@@ -1,0 +1,42 @@
+
+@define-color bg #272830;
+@define-color border #7c7f93;
+@define-color text #d9e0ee;
+@define-color surface1 #5c5f77;
+
+@define-color file_sys #bcc0cc;
+@define-color cpu #bcc0cc;
+@define-color mem #bcc0cc;
+@define-color temp #bcc0cc;
+
+@define-color pulseaudio #bcc0cc;
+@define-color light #bcc0cc;
+@define-color net #bcc0cc;
+@define-color bluetooth #bcc0cc;
+
+@define-color power #bcc0cc;
+
+@define-color red #bcc0cc;
+@define-color orange #bcc0cc;
+@define-color green #bcc0cc;
+@define-color blue #bcc0cc;
+
+@define-color menu_sep #bcc0cc;
+
+
+/* @define-color rosewater #f4dbd6; */
+/* @define-color flamingo #f0c6c6; */
+/* @define-color pink #f5bde6; */
+/* @define-color maroon #ee99a0; */
+/* @define-color peach #f5a97f; */
+/* @define-color teal #8bd5ca; */
+/* @define-color lavender #b7bdf8; */
+/* @define-color subtext1 #b8c0e0; */
+/* @define-color subtext0 #a5adcb; */
+/* @define-color overlay2 #939ab7; */
+/* @define-color overlay1 #8087a2; */
+/* @define-color overlay0 #6e738d; */
+/* @define-color surface2 #5b6078; */
+/* @define-color surface0 #363a4f; */
+/* @define-color base #24273a; */
+

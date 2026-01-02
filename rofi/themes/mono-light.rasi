@@ -1,0 +1,33 @@
+* {
+  bg: #bcc0ccb2;
+  bg-light: #c4c4c4;
+
+  border: #4c4f69;
+  selected-col: #4c4f69; 
+
+  text-col: #272830;
+  text-col-selected: #eff1f5;
+  text-col-spec: #4c4f69;
+
+  fg-col: #D9E0EE;
+  fg-col2: #4757b5; /* #7287FD; */
+
+  flamingo: #dd7878;
+  pink: #ea76cb;
+  mauve: #8839ef;
+  red: #d20f39;
+  maroon: #e64553;
+  peach: #fe640b;
+  sky: #04a5e5;
+  sapphire: #209fb5;
+  blue: #1e66f5;
+
+  subtext1: #5c5f77;
+  subtext0: #6c6f85;
+  overlay2: #7c7f93;
+  overlay1: #8c8fa1;
+  
+  surface1: #bcc0cc;
+
+  width: 600;
+}

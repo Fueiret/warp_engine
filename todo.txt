@@ -6,3 +6,6 @@ for fun: cmatrix, hollywood (\/)
 
 smth extra: openrgb -d 0 --mode static --color random obsidian
 fix mounting usb devices: udisks2 gvfs ntfs-3g exfatprogs dosfstools e2fsprogs
+
+add changing terminal bg
+

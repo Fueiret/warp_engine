@@ -1,0 +1,5 @@
+/* THEME */
+@theme "colors/tokyonight.rasi"
+
+/* TEMPLATE */
+@import "templates/style2-template.rasi"

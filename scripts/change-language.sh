@@ -4,7 +4,7 @@ current=$(hyprctl devices | awk '/active keymap/ {layout=$NF} /main: yes/ {print
 
 # Уведомление
 if [ "$current" == "Russian" ]; then
-    dunstify -u low --replace=70 "Language: ru"
+    notify-send -u low --replace=70 "Language: ru"
     output='ru'
     #if [ "$capslock_state" == "off" ]; then
     #    dunstify -u low --replace=70 "Language: ru"
@@ -12,7 +12,7 @@ if [ "$current" == "Russian" ]; then
     #    dunstify -u low --replace=70 "Language: RU"
     #fi
 elif [ "$current" == "(US)" ]; then 
-    dunstify -u low --replace=70 "Language: us"
+    notify-send -u low --replace=70 "Language: us"
     #if [ "$capslock_state" == "off" ]; then
     #    dunstify -u low --replace=70 "Language: us"
     #else

@@ -2,4 +2,4 @@
 @theme "theme.rasi"
 
 /* TEMPLATE */
-@import "template.rasi"
+@import "templates/wall-selector.rasi"

@@ -1,0 +1,179 @@
+/* Global Styles */
+* {
+    border: none;
+    border-radius: 10px; /* Уменьшено с 10px для компактности */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: bold;
+    font-size: 14px; /* Уменьшено с 14px */
+    padding: 0px 4px; /* Уменьшен вертикальный padding */
+    margin: 0;
+    color: @text;
+}
+
+/* Window and Bar */
+window#waybar {
+    background: @bg;
+    border-radius: 0;
+}
+
+/* Left Modules */
+#custom-filesystem, #clock {
+    background-color: @bg;
+}
+
+#custom-filesystem {
+    color: @file_sys;
+    padding: 0.1rem 0.4rem; /* Сохранено, но единообразно в rem */
+    border-radius: 10px 0 0 10px;
+}
+
+#clock {
+    color: @text;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0;
+}
+
+#clock:hover {
+    background-color: @surface1;
+}
+
+/* System Modules */
+#cpu, #custom-memoryicon, #memory, #temperature {
+    background-color: @bg;
+    border-radius: 0;
+    padding: 0.3rem 0.4rem; /* Уменьшен вертикальный padding с 0.5rem */
+    margin: 0;
+}
+
+#cpu {
+    color: @cpu;
+}
+
+#custom-memoryicon {
+    color: @mem;
+}
+
+#memory {
+    color: @mem;
+}
+
+#temperature {
+    color: @temp;
+    padding-right: 0.8rem; /* Уменьшено с 1rem */
+    border-radius: 0 10px 10px 0;
+}
+
+/* Right Modules */
+#pulseaudio, #pulseaudio.input, #backlight, #network, 
+#bluetooth, #battery, #custom-keyboard, #keyboard-state, #custom-power {
+    background-color: @bg;
+    border-radius: 0;
+    padding: 0.3rem 0.4rem; /* Уменьшен вертикальный padding */
+    margin: 0;
+}
+
+#pulseaudio {
+    color: @pulseaudio;
+    padding-left: 0.8rem; /* Уменьшено с 1rem */
+    border-radius: 10px 0 0 10px;
+}
+
+#pulseaudio.input {
+    color: @pulseaudio;
+}
+
+#backlight {
+    color: @light;
+}
+
+#network {
+    color: @net;
+}
+
+#bluetooth {
+    color: @bluetooth;
+}
+
+#battery {
+    color: @text;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning {
+    color: @orange;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#custom-keyboard, #keyboard-state {
+    color: @text;
+}
+
+#custom-power {
+    background-color: @bg;
+    color: @power;
+    padding: 0.3rem 0.8rem 0.3rem 0.6rem; /* Уменьшены отступы */
+    border-radius: 0 10px 10px 0;
+}
+
+/* Workspace Styles */
+#workspaces {
+    background-color: @bg;
+    color: @text;
+    padding: 0.1rem 0.1rem; /* Уменьшен вертикальный padding */
+    border-radius: 0.8rem; /* Уменьшено с 1rem */
+}
+
+#workspaces button {
+    background-color: transparent;
+    padding: 0 2px;
+    margin: 0;
+    border-radius: 0.8rem;
+}
+
+#workspaces button:hover {
+    background-color: transparent;
+    color: @crust;
+}
+
+#workspaces button.active {
+    background-color: @bg;
+    color: @text;
+    border-radius: 0.8rem;
+    border: 2px solid @border;
+}
+
+#workspaces button.urgent {
+    background-color: @bg;
+    color: @text;
+}
+
+/* System Tray */
+#tray {
+    background-color: transparent;
+    color: @text;
+    padding: 0;
+}
+
+#tray menu {
+    background-color: @bg;
+    color: @text;
+    border: 1px solid @bg;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+#tray menu separator {
+    background: @menu_sep;
+    margin: 4px 0;
+}
+
+#tray > .passive, #tray > .needs-attention {
+    background-color: @bg;
+    color: @text;
+}

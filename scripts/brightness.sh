@@ -40,7 +40,7 @@ increase_brightness() {
     brightness=$(brightnessctl get)
     max_brightness=$(brightnessctl max)
     current_brightness=$(( brightness * 100 / max_brightness))
-    dunstify -u low --replace=69 -h "int:value:$current_brightness" "Brightness: $current_brightness%"
+    notify-send -u low -r 69 -h "int:value:$current_brightness" "Brightness: $current_brightness%"
 }
 
 # Уменьшить яркость на 5%
@@ -52,7 +52,7 @@ decrease_brightness() {
     brightness=$(brightnessctl get)
     max_brightness=$(brightnessctl max)
     current_brightness=$(( brightness * 100 / max_brightness))
-    dunstify -u low --replace=69 -h "int:value:$current_brightness" "Brightness: $current_brightness%"
+    notify-send -u low -r 69 -h "int:value:$current_brightness" "Brightness: $current_brightness%"
 }
 
 # Основная логика

@@ -1,10 +1,10 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
-  "margin-top": 3, 
-  "margin-left": 5, 
-  "margin-right": 5, 
-  "modules-left":  ["group/left", "group/system", "tray"],
+  "margin-top": 0, 
+  "padding-left": 0,
+  "padding-right": 0,
+  "modules-left":  ["group/left", "tray"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["group/right"],
 
@@ -12,13 +12,7 @@
     "orientation": "horizontal",
     "modules": [
       "custom/filesystem",
-      "clock"
-    ]
-  },
-
-  "group/system": {
-    "orientation" : "horizontal",
-    "modules": [
+      "clock",
       "cpu",
       "custom/memoryicon",
       "memory",
@@ -36,7 +30,6 @@
       "bluetooth",
       "battery",
       "custom/keyboard",
-      /*"keyboard-state",*/
       "custom/power"
     ]
   },
@@ -60,10 +53,6 @@
             "special": " "
         },
         "sort-by-number": true
-  },
-
-  "hyprland/window": {
-    "format": "{}"
   },
 
   "tray": {
@@ -120,10 +109,6 @@
   },
 
    "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    // "critical-threshold": 80,
-    // "format-critical": " {temperatureC}°C",
     "format": " {temperatureC}°C",
     "tooltip": false
   },
@@ -175,7 +160,7 @@
 
   "custom/power": {
     "format": "",
-    "on-click": "wlogout", // Запуск wlogout при клике
+    "on-click": "wlogout",
     "tooltip": false
   },
 
@@ -183,20 +168,18 @@
     "format": "\uf293 {status}",
     "format-connected": "\uf293 {device_alias}",
     "format-disconnected": "\uf293 off",
-    //"tooltip-format": "Bluetoorh: {status}\nDevice: {device_alias}",
     "on-click": "blueman-manager",
     "tooltip": false
   },
   
   "tray": {
 	"icon-size": 14,
-	//"spacing": 10,
 	"show-passive-items": true
   },
 
   "custom/separator": {
     "format": "|",
-    "tooltip": false,
+    "tooltip": false
   }
 }
 

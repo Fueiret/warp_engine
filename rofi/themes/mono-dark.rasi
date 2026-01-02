@@ -1,0 +1,23 @@
+* {
+  bg: #272830b2;
+  bg-light: #373B52;
+
+  border: #7c7f93;
+  selected-col: #7c7f93; 
+
+  text-col: #D9E0EE;
+  text-col-selected: #091114ff;
+  text-col-spec: #9FA0A1;
+
+  fg-col: #D9E0EE;
+  fg-col2: #F28FAD;
+
+  subtext1: #5c5f77;
+  subtext0: #6c6f85;
+  overlay2: #7c7f93;
+  overlay1: #8c8fa1;
+  
+  surface1: #bcc0cc;
+
+  width: 600;
+}
