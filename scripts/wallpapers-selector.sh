@@ -44,13 +44,16 @@ fi
 echo "" > "$HOME/.config/hypr/hyprpaper.conf"
 
 cat << EOF > $HOME/.config/hypr/hyprpaper.conf
-preload = $SELECTED_WALLPAPER
-wallpaper = eDP-1, $SELECTED_WALLPAPER
-wallpaper = HDMI-A-1, $SELECTED_WALLPAPER
+# preload = $SELECTED_WALLPAPER
+# wallpaper = eDP-1, $SELECTED_WALLPAPER
+wallpaper {
+    monitor = eDP-1
+    path = $SELECTED_WALLPAPER
+}
 splash = true
-# offset.splash = 2.0
-splash_color = 0xbbffffff
 ipc = true
+# offset.splash = 2.0
+# splash_color = 0xbbffffff
 EOF
 
 # reload hyprpaper
