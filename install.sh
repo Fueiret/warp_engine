@@ -73,7 +73,7 @@ cp -r "$TEMP_DIR/hypr" "$HYPR_DIR"
 cp -r "$TEMP_DIR/rofi" "$CONFIG_DIR/rofi"
 cp -r "$TEMP_DIR/scripts" "$CONFIG_DIR/scripts"
 cp -r "$TEMP_DIR/waybar" "$CONFIG_DIR/waybar"
-cp -r "$TEMP_DIR/wallpapers" "$USER_HOME/wallpapers"
+cp -r "$TEMP_DIR/Wallpapers" "$USER_HOME/Wallpapers"
 
 # zsh
 cp "$TEMP_DIR/.zshrc" "$USER_HOME/.zshrc"
