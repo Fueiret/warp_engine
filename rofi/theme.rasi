@@ -1,2 +1,2 @@
 /* THEME PATH */ 
-@import "themes/catppuccin-dark.rasi"
+@import "themes/dracula.rasi"
