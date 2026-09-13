@@ -6,7 +6,7 @@ import subprocess
 
 
 CATEGORIES = ["base", "desktop", "fonts", "development", "applications", "latex"]
-DOTFILES = ["niri", "alacritty", "zsh", "waybar", "rofi", "dunst"]
+DOTFILES = ["niri", "alacritty", "waybar", "rofi", "dunst"]
 SERVICES = ["NetworkManager", "bluetooth", "sddm"]
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -26,7 +26,7 @@ def run_command(command, cwd=None):
 
 
 def update_system():
-    run_command(["sudo", "pacman", "-Syu"])
+    run_command(["sudo", "pacman", "-Syu", "--noconfirm"])
 
 
 def install_yay():
@@ -50,31 +50,28 @@ def install_via_pacman(packages):
     if not packages:
         return
 
-    names = [pkg["name"] for pkg in packages]
-
-    run_command(["sudo", "pacman", "-S", "--needed", *names])
+    run_command(["sudo", "pacman", "-S", "--needed", "--noconfirm", *packages])
 
 
 def install_via_aur(packages):
     if not packages:
         return
 
-    names = [pkg["name"] for pkg in packages]
-
-    run_command(["yay", "-S", "--needed", *names])
+    run_command(["yay", "-S", "--needed", "--noconfirm", *packages])
 
 
 def install_category(packages_json, category: str):
     print(f"===> Installing packages from {category} category")
 
+    packages = packages_json[category]["packages"]
     pacman_list = []  # pkg for pkg in packages_json[category] if pkg["source"] == "pacman"]
     aur_list = []  # pkg for pkg in packages_json[category] if pkg["source"] == "aur"]
 
-    for pkg in packages_json[category]:
+    for pkg in packages:
         if pkg["source"] == "pacman":
-            pacman_list.append(pkg)
+            pacman_list.append(pkg["name"])
         elif pkg["source"] == "aur":
-            aur_list.append(pkg)
+            aur_list.append(pkg["name"])
         else:
             raise ValueError(
                 f"Error: for package:{pkg} unknown source: {pkg['source']}. Pls check it in file packages.json"
@@ -104,6 +101,10 @@ def copy_files(source_dir, destination_dir):  # TODO: is dir exist
     source_dir = Path(source_dir).expanduser()
     destination_dir = Path(destination_dir).expanduser()
 
+    if not source_dir.exists():
+        print(f"Warning: {source_dir} does not exist, skipping")
+        return
+
     destination_dir.mkdir(parents=True, exist_ok=True)
 
     for file in source_dir.iterdir():
@@ -116,6 +117,10 @@ def copy_dir(source_dir, destination_dir):  # TODO: is dir exist
 
     source_dir = Path(source_dir).expanduser()
     destination_dir = Path(destination_dir).expanduser()
+
+    if not source_dir.exists():
+        print(f"Warning: {source_dir} does not exist, skipping")
+        return
 
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
 
@@ -148,7 +153,7 @@ def copy_scripts(source_dir=BASE_DIR / "scripts-niri"):
     make_executable(destination_dir)
 
 
-def copy_wallpapers(source_dir=BASE_DIR / "Wallpaper"):
+def copy_wallpapers(source_dir=BASE_DIR / "Wallpapers"):
     print("===> Copying wallpapers to ~/Wallpapers")
 
     destination_dir = Path("~/Wallpapers").expanduser()
@@ -164,31 +169,44 @@ def enable_services():
 
 def install_oh_my_zsh():
     print("===> Installing Oh My Zsh")
+    print("Run this command to install zsh:")
+    print(
+        "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh"
+    )
 
-    oh_my_zsh_dir = Path.home() / ".oh-my-zsh"
+    # oh_my_zsh_dir = Path.home() / ".oh-my-zsh"
+    #
+    # if (oh_my_zsh_dir / "oh-my-zsh.sh").is_file():
+    #     print("Oh My Zsh is already installed")
+    #     return
+    #
+    # subprocess.run(
+    #     "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh",
+    #     shell=True,
+    #     check=True,
+    # )
+    # # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    #
+    # copy_dir(BASE_DIR / "zsh" / ".zsh", oh_my_zsh_dir)
+    #
+    # zshrc_file = BASE_DIR / "zsh" / ".zshrc"
+    # if zshrc_file.is_file():
+    #     shutil.copy2(zshrc_file, Path.home() / zshrc_file.name)
 
-    if (oh_my_zsh_dir / "oh-my-zsh.sh").is_file():
-        print("Oh My Zsh is already installed")
+
+# pkief.material-icon-theme
+# bbenoist.nix
+# ms-python.python
+# ms-python.mypy-type-checker
+# ms-python.debugpy
+# ms-python.vscode-python-envs
+# formulahendry.code-runner
+# llvm-vs-code-extensions.vscode-clangd
+def install_vscodium_extensions(extensions=None):
+    # TODO: add to packages.json
+    if extensions is None:
         return
 
-    run_command(
-        [
-            "sh",
-            "-c",
-            "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
-        ]
-    )
-    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-    copy_dir(BASE_DIR / "zsh" / ".zsh", oh_my_zsh_dir)
-
-    zshrc_file = BASE_DIR / "zsh" / ".zshrc"
-    if zshrc_file.is_file():
-        shutil.copy2(zshrc_file, Path.home() / zshrc_file.name)
-
-
-def install_vscodium_extensions(extensions=["ms-python.python"]):
-    # TODO: add to packages.json
     print("===> Installing VSCodium extensions")
 
     if not shutil.which("codium"):
@@ -213,4 +231,4 @@ if __name__ == "__main__":
 
     install_oh_my_zsh()
 
-    install_vscodium_extensions()
+    # install_vscodium_extensions()
