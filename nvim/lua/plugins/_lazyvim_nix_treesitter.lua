@@ -1,0 +1,1 @@
+/nix/store/ignbvpgw834rh8sghs1bqnya2jsvc8a6-home-manager-files/.config/nvim/lua/plugins/_lazyvim_nix_treesitter.lua

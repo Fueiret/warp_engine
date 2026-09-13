@@ -1,0 +1,49 @@
+# Display manager
+sddm
+
+# Wayland compositor
+niri
+
+# Desktop bar
+waybar
+
+# Application launcher
+rofi
+
+# Notifications
+dunst
+
+# Terminal
+alacritty
+kitty
+
+# File manager
+dolphin
+nautilus
+
+# Wallpapers
+awww
+
+# Clipboard
+wl-clipboard
+cliphist
+
+# Screenshots
+grim
+slurp
+
+# Brightness
+brightnessctl
+
+# X11 compatibility
+xorg-xwayland
+xwayland-satellite
+
+# Portals
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-gnome
+
+# Qt / Wayland integration
+qt6-wayland
+qt5-wayland

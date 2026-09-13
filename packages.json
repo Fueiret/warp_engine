@@ -1,0 +1,584 @@
+{
+  "base": {
+    "packages": [
+      {
+        "name": "amd-ucode",
+        "source": "pacman"
+      },
+      // # Basic system
+      {
+        "name": "base-devel",
+        "source": "pacman"
+      },
+      {
+        "name": "git",
+        "source": "pacman"
+      },
+      {
+        "name": "curl",
+        "source": "pacman"
+      },
+      {
+        "name": "wget",
+        "source": "pacman"
+      },
+      {
+        "name": "unzip",
+        "source": "pacman"
+      },
+      {
+        "name": "unrar",
+        "source": "pacman"
+      },
+      {
+        "name": "zip",
+        "source": "pacman"
+      },
+      // # Shell
+      {
+        "name": "zsh",
+        "source": "pacman"
+      },
+      // # File / disk utilities
+      {
+        "name": "udisks2",
+        "source": "pacman"
+      },
+      {
+        "name": "ntfs-3g",
+        "source": "pacman"
+      },
+      {
+        "name": "exfatprogs",
+        "source": "pacman"
+      },
+      // # Hardware / system information
+      {
+        "name": "pciutils",
+        "source": "pacman"
+      },
+      {
+        "name": "usbutils",
+        "source": "pacman"
+      },
+      {
+        "name": "lm_sensors",
+        "source": "pacman"
+      },
+      // # Networking
+      {
+        "name": "networkmanager",
+        "source": "pacman" },
+      {
+        "name": "network-manager-applet",
+        "source": "pacman"
+      },
+      // # Bluetooth
+      {
+        "name": "bluez",
+        "source": "pacman"
+      },
+      {
+        "name": "bluez-utils",
+        "source": "pacman"
+      },
+      // # Audio
+      {
+        "name": "pipewire",
+        "source": "pacman"
+      },
+      {
+        "name": "pipewire-alsa",
+        "source": "pacman"
+      },
+      {
+        "name": "pipewire-pulse",
+        "source": "pacman"
+      },
+      {
+        "name": "wireplumber",
+        "source": "pacman"
+      },
+      // # Editor
+      {
+        "name": "neovim",
+        "source": "pacman"
+      },
+      // # Authentication / secrets
+      {
+        "name": "polkit",
+        "source": "pacman"
+      },
+      {
+        "name": "gnome-keyring",
+        "source": "pacman"
+      },
+      {
+        "name": "gnupg",
+        "source": "pacman"
+      },
+      // # AMD graphics
+      {
+        "name": "mesa",
+        "source": "pacman"
+      },
+      {
+        "name": "vulkan-radeon",
+        "source": "pacman"
+      },
+      {
+        "name": "vulkan-icd-loader",
+        "source": "pacman"
+      },
+      // # Power management
+      {
+        "name": "power-profiles-daemon",
+        "source": "pacman"
+      },
+      // # Documentation / tooling
+      {
+        "name": "man-db",
+        "source": "pacman"
+      },
+      {
+        "name": "man-pages",
+        "source": "pacman"
+      }
+    ]
+  },
+
+  "desktop": {
+    "packages": [
+      // # Display manager
+      {
+        "name": "sddm",
+        "source": "pacman"
+      },
+      // # Wayland compositor
+      {
+        "name": "niri",
+        "source": "pacman"
+      },
+      {
+        "name": "dms-shell",
+        "source": "pacman"
+      }
+      // # Desktop bar
+      {
+        "name": "waybar",
+        "source": "pacman"
+      },
+      // # Application launcher
+      {
+        "name": "rofi",
+        "source": "pacman"
+      },
+      // # Notifications
+      {
+        "name": "dunst",
+        "source": "pacman"
+      },
+      // # logout
+      {
+        "name": "wlogout",
+        "source": "aur"
+      },
+      // # Terminal
+      {
+        "name": "alacritty",
+        "source": "pacman"
+      },
+      {
+        "name": "kitty",
+        "source": "pacman"
+      },
+      // # File manager
+      {
+        "name": "dolphin",
+        "source": "pacman"
+      },
+      {
+        "name": "nautilus",
+        "source": "pacman"
+      },
+
+      // # Wallpapers
+      {
+        "name": "awww",
+        "source": "pacman"
+      },
+      {
+        "name": "swaybg",
+        "source": "pacman"
+      },
+      {
+        "name": "imagemagick",
+        "source": "pacman"
+      },
+      // # Clipboard
+      {
+        "name": "wl-clipboard",
+        "source": "pacman"
+      },
+      {
+        "name": "cliphist",
+        "source": "pacman"
+      },
+      // # Screenshots
+      {
+        "name": "grim",
+        "source": "pacman"
+      },
+      {
+        "name": "slurp",
+        "source": "pacman"
+      },
+      // # Brightness
+      {
+        "name": "brightnessctl",
+        "source": "pacman"
+      },
+      // # X11 compatibility
+      {
+        "name": "xorg-xwayland",
+        "source": "pacman"
+      },
+      {
+        "name": "xwayland-satellite",
+        "source": "pacman"
+      },
+      // # Portals
+      {
+        "name": "xdg-desktop-portal",
+        "source": "pacman"
+      },
+      {
+        "name": "xdg-desktop-portal-gtk",
+        "source": "pacman"
+      },
+      {
+        "name": "xdg-desktop-portal-gnome",
+        "source": "pacman"
+      },
+      // # Qt / Wayland integration
+      {
+        "name": "qt6-wayland",
+        "source": "pacman"
+      },
+      {
+        "name": "qt5-wayland",
+        "source": "pacman"
+      }
+    ]
+  },
+
+  "fonts": {
+    "packages": [
+      {
+        "name": "noto-fonts",
+        "source": "pacman"
+      },
+      {
+        "name": "noto-fonts-cjk",
+        "source": "pacman"
+      },
+      {
+        "name": "noto-fonts-emoji",
+        "source": "pacman"
+      },
+      {
+        "name": "ttf-jetbrains-mono-nerd",
+        "source": "pacman"
+      },
+      {
+        "name": "adwaita-icon-theme",
+        "source": "pacman"
+      },
+      {
+        "name": "hicolor-icon-theme",
+        "source": "pacman"
+      },
+      {
+        "name": "papirus-icon-theme",
+        "source": "pacman"
+      }
+    ]
+  },
+
+  "development": {
+    "packages": [
+      {
+        "name": "gcc",
+        "source": "pacman"
+      },
+      {
+        "name": "clang",
+        "source": "pacman"
+      },
+      {
+        "name": "llvm",
+        "source": "pacman"
+      },
+      {
+        "name": "cmake",
+        "source": "pacman"
+      },
+      {
+        "name": "ninja",
+        "source": "pacman"
+      },
+      {
+        "name": "meson",
+        "source": "pacman"
+      },
+      {
+        "name": "gdb",
+        "source": "pacman"
+      },
+      {
+        "name": "valgrind",
+        "source": "pacman"
+      },
+      {
+        "name": "shellcheck",
+        "source": "pacman"
+      },
+      {
+        "name": "shfmt",
+        "source": "pacman"
+      },
+      {
+        "name": "python",
+        "source": "pacman"
+      },
+      {
+        "name": "python-pip",
+        "source": "pacman"
+      },
+      {
+        "name": "python-pipx",
+        "source": "pacman"
+      },
+      {
+        "name": "rustup",
+        "source": "pacman"
+      },
+      {
+        "name": "jdk-openjdk",
+        "source": "pacman"
+      }
+    ]
+  },
+
+  "applications": {
+    "packages": [
+      // # Browsers
+      {
+        "name": "chromium",
+        "source": "pacman"
+      },
+      {
+        "name": "librewolf",
+        "source": "pacman"
+      },
+      {
+        "name": "torbrowser-launcher",
+        "source": "aur"
+      },
+      // # Communication
+      {
+        "name": "discord",
+        "source": "pacman"
+      },
+      {
+        "name": "telegram-desktop",
+        "source": "pacman"
+      },
+      {
+        "name": "element-desktop",
+        "source": "pacman"
+      },
+      // # Torrent
+      {
+        "name": "qbittorrent",
+        "source": "pacman"
+      },
+      // # Office
+      {
+        "name": "obsidian",
+        "source": "pacman"
+      },
+      {
+        "name": "libreoffice-fresh",
+        "source": "pacman"
+      },
+      {
+        "name": "gimp",
+        "source": "pacman"
+      },
+      {
+        "name": "krita",
+        "source": "pacman"
+      },
+      {
+        "name": "obs-studio",
+        "source": "pacman"
+      },
+      {
+        "name": "nomacs",
+        "source": "pacman"
+      },
+      {
+        "name": "openboard",
+        "source": "pacman"
+      },
+      // # Media
+      {
+        "name": "mpv",
+        "source": "pacman"
+      },
+      {
+        "name": "imv",
+        "source": "pacman"
+      },
+      // # Archives
+      {
+        "name": "file-roller",
+        "source": "pacman"
+      },
+      // # PDF
+      {
+        "name": "zathura",
+        "source": "pacman"
+      },
+      {
+        "name": "zathura-pdf-mupdf",
+        "source": "pacman"
+      },
+      // # Passwords / secrets
+      {
+        "name": "keepassxc",
+        "source": "pacman"
+      },
+      // # Git GUI / diff
+      {
+        "name": "meld",
+        "source": "pacman"
+      },
+      // # System GUI tools
+      {
+        "name": "pavucontrol",
+        "source": "pacman"
+      },
+      {
+        "name": "blueman",
+        "source": "pacman"
+      },
+      // # Gaming
+      {
+        "name": "steam",
+        "source": "pacman"
+      },
+      {
+        "name": "gamemode",
+        "source": "pacman"
+      },
+      // # Network / proxy
+      {
+        "name": "throne",
+        "source": "pacman"
+      },
+      {
+        "name": "amneziavpn-bin",
+        "source": "aur"
+      },
+      {
+        "name": "ncy-bin",
+        "source": "aur"
+      },
+      // # IDEs
+      {
+        "name": "texstudio",
+        "source": "pacman"
+      },
+      {
+        "name": "vscodium-bin",
+        "source": "aur"
+      },
+      // # CLI utils
+      {
+        "name": "htop",
+        "source": "pacman"
+      },
+      {
+        "name": "btop",
+        "source": "pacman"
+      },
+      {
+        "name": "imagemagick",
+        "source": "pacman"
+      },
+      {
+        "name": "qpwgraph",
+        "source": "pacman"
+      },
+      {
+        "name": "fastfetch",
+        "source": "pacman"
+      }
+    ]
+  },
+
+  "latex": {
+    "packages": [
+      {
+        "name": "texlive-basic",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-bin",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-latex",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-latexrecommended",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-latexextra",
+        "source": "pacman"
+      },
+      {
+        "name": "biber",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-bibtexextra",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-fontsrecommended",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-mathscience",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-pictures",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-langcyrillic",
+        "source": "pacman"
+      },
+      {
+        "name": "texlive-langenglish",
+        "source": "pacman"
+      }
+    ]
+  }
+}

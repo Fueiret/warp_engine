@@ -1,0 +1,42 @@
+# Browsers
+firefox
+chromium
+
+# Communication
+discord
+telegram-desktop
+
+# Productivity
+obsidian
+libreoffice-fresh
+
+# Media
+mpv
+imv
+
+# Archives
+file-roller
+
+# PDF
+zathura
+zathura-pdf-mupdf
+
+# Passwords / secrets
+keepassxc
+
+# Git GUI / diff
+meld
+
+# System GUI tools
+pavucontrol
+blueman
+
+# Gaming
+steam
+gamemode
+
+# Network / proxy
+throne
+
+# LaTex editor
+texstudio

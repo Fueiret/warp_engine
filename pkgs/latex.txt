@@ -1,0 +1,23 @@
+# TeX Live
+texlive-basic
+texlive-bin
+texlive-latex
+texlive-latexrecommended
+texlive-latexextra
+
+# Bibliography
+biber
+texlive-bibtexextra
+
+# Fonts
+texlive-fontsrecommended
+
+# Mathematics / science
+texlive-mathscience
+
+# Graphics
+texlive-pictures
+
+# Language
+texlive-langcyrillic
+texlive-langenglish

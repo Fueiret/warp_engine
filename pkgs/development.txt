@@ -1,0 +1,27 @@
+# Compilers
+gcc
+clang
+llvm
+
+# Build systems
+cmake
+meson
+ninja
+
+# Debugging
+gdb
+
+# Shell / scripting
+shellcheck
+shfmt
+
+# Python
+python
+python-pip
+python-pipx
+
+# Rust
+rustup
+
+# Java
+jdk-openjdk

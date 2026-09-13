@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 THEME_DIR="$HOME/.config/waybar/themes"
 TEMPLATE_DIR="$HOME/.config/waybar/templates"
 
@@ -10,7 +9,6 @@ TEMPLATE_FILE="$HOME/.config/waybar/template.css"
 CONFIG_FILE="$HOME/.config/waybar/config.jsonc"
 
 SELECTOR_CONF="$HOME/.config/rofi/theme-selector.rasi"
-
 
 if [[ ! -d "$THEME_DIR" ]]; then
     echo "($THEME_DIR) not found!"
@@ -22,10 +20,8 @@ if [[ ! -d "$TEMPLATE_DIR" ]]; then
     exit 1
 fi
 
-
 THEMES=($(ls "$THEME_DIR"/*.css | xargs -n 1 basename | sed 's/\.css$//'))
 TEMPLATES=($(ls "$TEMPLATE_DIR"/*.css | xargs -n 1 basename | sed 's/\.css$//'))
-
 
 show_menu() {
     local prompt="Waybar settings"
@@ -33,41 +29,53 @@ show_menu() {
     local selected_category=$(echo -e "${options[@]}" | tr ' ' '\n' | rofi -dmenu -p "$prompt" -config $SELECTOR_CONF)
 
     case "$selected_category" in
-        "Themes")
-            echo -e "${THEMES[@]}" | tr ' ' '\n' | rofi -dmenu -p "Choose theme" -config $SELECTOR_CONF
-            ;;
-        "Templates")
-            echo -e "${TEMPLATES[@]}" | tr ' ' '\n' | rofi -dmenu -p "Choose templates" -config $SELECTOR_CONF
-            ;;
-        *)
-            echo ""
-            ;;
+    "Themes")
+        echo -e "${THEMES[@]}" | tr ' ' '\n' | rofi -dmenu -p "Choose theme" -config $SELECTOR_CONF
+        ;;
+    "Templates")
+        echo -e "${TEMPLATES[@]}" | tr ' ' '\n' | rofi -dmenu -p "Choose templates" -config $SELECTOR_CONF
+        ;;
+    *)
+        echo ""
+        ;;
     esac
 }
 
 restart_waybar() {
-    if ! pkill waybar; then
-        notify-send "Error" "Could not terminate Waybar."
-        exit 1
-    fi
+    pkill waybar
+    sleep 0.5
 
-    waybar &
+    waybar -c "$CONFIG_FILE" >/dev/null 2>&1 &
+
+    if [ $? -eq 0 ]; then
+        notify-send "Waybar" "Theme changed"
+    else
+        notify-send "Error" "Cannot terminate Waybar"
+    fi
 }
 
+# restart_waybar() {
+#     if ! pkill waybar; then
+#         notify-send "Error" "Could not terminate Waybar."
+#         exit 1
+#     fi
+#
+#     waybar &
+# }
 
 apply_theme() {
     local theme="$1"
 
     if [[ -f "$THEME_DIR/$theme.css" ]]; then
-        echo "" > "$THEME_FILE"
+        echo "" >"$THEME_FILE"
 
-        cat << EOF > "$THEME_FILE"
+        cat <<EOF >"$THEME_FILE"
 /* THEME PATH */
 @import "themes/$theme.css";
 EOF
 
         notify-send "Waybar Theme Switcher" "Theme: '$theme'"
-    else 
+    else
         echo "Theme $theme not found"
         exit 1
     fi
@@ -77,9 +85,9 @@ apply_template() {
     local template="$1"
 
     if [[ -f "$TEMPLATE_DIR/$template.css" ]]; then
-        echo "" > "$TEMPLATE_FILE"
+        echo "" >"$TEMPLATE_FILE"
 
-        cat << EOF > "$TEMPLATE_FILE"
+        cat <<EOF >"$TEMPLATE_FILE"
 /* TEMPLATE PATH */ 
 @import "templates/$template.css";
 EOF
@@ -87,23 +95,20 @@ EOF
         cp "$TEMPLATE_DIR/$template.jsonc" "$CONFIG_FILE"
 
         notify-send "Waybar Theme Switcher" "Template: '$template'"
-    else 
+    else
         echo "Template $template not found"
         exit 1
     fi
 }
 
-
 main() {
     selected=$(show_menu)
 
-    
     if [[ -z "$selected" ]]; then
         echo "Nothing selected"
         exit 1
     fi
 
-    
     if [[ " ${THEMES[*]} " =~ " $selected " ]]; then
         apply_theme "$selected"
     elif [[ " ${TEMPLATES[*]} " =~ " $selected " ]]; then

@@ -1,0 +1,62 @@
+amd-ucode
+
+# Basic system
+base-devel
+git
+curl
+wget
+unzip
+unrar
+zip
+
+# Shell
+zsh
+
+# File / disk utilities
+udisks2
+ntfs-3g
+exfatprogs
+
+# Hardware / system information
+pciutils
+usbutils
+lm_sensors
+
+# Networking
+networkmanager
+network-manager-applet
+
+# Bluetooth
+bluez
+bluez-utils
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+
+# Editor
+neovim
+
+# Authentication / secrets
+polkit
+gnome-keyring
+gnupg
+
+# Fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+
+# AMD graphics
+mesa
+vulkan-radeon
+vulkan-icd-loader
+
+# Power management
+power-profiles-daemon
+
+# Documentation / tooling
+man-db
+man-pages

@@ -35,12 +35,6 @@ get_mute() {
 show_notification() {
     local vol=$(get_volume)
     local mute=$(get_mute)
-    
-    if [ "$mute" = "yes" ]; then
-        notify-send -u low -r 69 -h "int:value:$vol" "Mute"
-    else
-        notify-send -u low -r 69 -h "int:value:$vol" "Volume: $vol%"
-    fi
 }
 
 # Increase volume (cap at 100%)
@@ -48,23 +42,17 @@ volume_up() {
     local current=$(get_volume)
     if [ "$current" -lt 150 ]; then
         pactl set-sink-volume @DEFAULT_SINK@ +5%
-    	  local vol=$(get_volume)
-        notify-send -u low -r 69 -h "int:value:$vol" "Volume: $vol%"
+        local vol=$(get_volume)
     else
         pactl set-sink-volume @DEFAULT_SINK@ 150%
-    	local vol=$(get_volume)
-        notify-send -u low -r 69 -h "int:value:$vol" "Volume: $vol%"
+        local vol=$(get_volume)
     fi
-    # show_notification
-    # notify-send -u low -r 69 -h "int:value:$vol" "Volume: $vol%"
 }
 
 # Decrease volume
 volume_down() {
     pactl set-sink-volume @DEFAULT_SINK@ -5%
     local vol=$(get_volume)
-    # show_notification
-    notify-send -u low -r 69 -h "int:value:$vol" "Volume: $vol%"
 }
 
 # Toggle mute
@@ -75,9 +63,9 @@ toggle_mute() {
 
 # Handle arguments
 case "$1" in
-    --up) volume_up ;;
-    --down) volume_down ;;
-    --toggle) toggle_mute ;;
-    --get) get_volume ;;
-    *) echo "Use it $0 [up|down|mute|get]" ;;
+--up) volume_up ;;
+--down) volume_down ;;
+--toggle) toggle_mute ;;
+--get) get_volume ;;
+*) echo "Use it $0 [up|down|mute|get]" ;;
 esac
