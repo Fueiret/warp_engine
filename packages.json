@@ -45,6 +45,18 @@
         "source": "pacman"
       },
       {
+        "name": "e2fsprogs",
+        "source": "pacman"
+      },
+      {
+        "name": "dosfstools",
+        "source": "pacman"
+      },
+      {
+        "name": "gvfs",
+        "source": "pacman"
+      },
+      {
         "name": "ntfs-3g",
         "source": "pacman"
       },

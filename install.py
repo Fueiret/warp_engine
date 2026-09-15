@@ -18,7 +18,8 @@ def check_root():
 
 def load_packages_json():
     with open(BASE_DIR / "packages.json", "r", encoding="utf-8") as file:
-        return json.load(file)
+        lines = [line for line in file if "//" not in line]
+        return json.loads("".join(lines))
 
 
 def run_command(command, cwd=None):
