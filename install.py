@@ -18,7 +18,7 @@ def check_root():
 
 def load_packages_json():
     with open(BASE_DIR / "packages.json", "r", encoding="utf-8") as file:
-        lines = [line for line in file if "//" not in line]
+        lines = [line for line in file if not line.lstrip().startswith("//")]
         return json.loads("".join(lines))
 
 
